@@ -15,6 +15,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   #google fonts
   google_fonts: ^2.1.0
+  #google mlkit
+  google_ml_kit: ^0.7.0
   #firebase
   firebase_core: ^1.4.0
   #conect google
@@ -22,6 +24,10 @@ dependencies:
   google_sign_in_web: ^0.10.0+1
   #save data
   shared_preferences: ^2.0.6
+  #camera
+  camera: ^0.8.1+7
+  #image picker
+  image_picker: ^0.8.3+2
 
 dev_dependencies:
   flutter_test:
