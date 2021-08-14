@@ -7,7 +7,7 @@ import 'package:payflow/shared/widgets/social_login/social_login_button.dart';
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -20,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.background,
+      // ignore: sized_box_for_whitespace
       body: Container(
         width: size.width,
         height: size.height,

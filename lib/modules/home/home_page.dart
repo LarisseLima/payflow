@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: pages[controller.currentPage],
+      // ignore: sized_box_for_whitespace
       bottomNavigationBar: Container(
         height: 90,
         child: Row(

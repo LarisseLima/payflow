@@ -6,6 +6,7 @@ void main() {
   runApp(AppFirebase());
 }
 
+// ignore: use_key_in_widget_constructors
 class AppFirebase extends StatefulWidget {
   @override
   _AppFirebaseState createState() => _AppFirebaseState();
