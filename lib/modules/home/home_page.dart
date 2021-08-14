@@ -68,8 +68,9 @@ class _HomePageState extends State<HomePage> {
                   color: AppColors.primary,
                 )),
             GestureDetector(
-              onTap: () {
-                print("Clicou");
+              onTap: () async {
+                await Navigator.pushNamed(context, "/barcode_scanner");
+                setState(() {});
               },
               child: Container(
                 width: 56,

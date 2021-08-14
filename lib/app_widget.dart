@@ -11,7 +11,8 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pay Flow',
-      theme: ThemeData(primaryColor: AppColors.primary),
+      theme: ThemeData(
+          primarySwatch: Colors.orange, primaryColor: AppColors.primary),
       initialRoute: "/splash",
       routes: {
         "/splash": (context) => const SplashPage(),
