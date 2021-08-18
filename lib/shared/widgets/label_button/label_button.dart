@@ -41,6 +41,6 @@ class LabelButton extends StatelessWidget {
           style: style,
         ),
       ),
-    ));
+    ),);
   }
 }
