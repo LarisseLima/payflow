@@ -10,7 +10,9 @@ class BarcodeScannerController {
       ValueNotifier<BarcodeScannerStatus>(BarcodeScannerStatus());
   BarcodeScannerStatus get status => statusNotifier.value;
   set status(BarcodeScannerStatus status) => statusNotifier.value = status;
+
   final barcodeScanner = GoogleMlKit.vision.barcodeScanner();
+
   InputImage? imagePicker;
 
   void getAvailableCameras() async {
@@ -36,7 +38,6 @@ class BarcodeScannerController {
         }
       }
       final barcodes = await barcodeScanner.processImage(inputImage);
-      // ignore: prefer_typing_uninitialized_variables
       var barcode;
       for (Barcode item in barcodes) {
         barcode = item.value.displayValue;
@@ -51,7 +52,6 @@ class BarcodeScannerController {
 
       return;
     } catch (e) {
-      // ignore: avoid_print
       print("ERRO DA LEITURA $e");
     }
   }
@@ -113,8 +113,9 @@ class BarcodeScannerController {
           await Future.delayed(const Duration(seconds: 3));
           await scannerBarCode(inputImageCamera);
         } catch (e) {
-          // ignore: avoid_print
-          print(e);
+          if (kDebugMode) {
+            print(e);
+          }
         }
       });
     }
