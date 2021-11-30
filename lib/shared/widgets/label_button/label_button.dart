@@ -31,7 +31,6 @@ class LabelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        // ignore: sized_box_for_whitespace
         child: Container(
       height: 56,
       child: TextButton(
@@ -41,6 +40,6 @@ class LabelButton extends StatelessWidget {
           style: style,
         ),
       ),
-    ),);
+    ));
   }
 }
