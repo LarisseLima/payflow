@@ -46,58 +46,21 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
           ValueListenableBuilder<BarcodeScannerStatus>(
               valueListenable: controller.statusNotifier,
               builder: (_, status, __) {
-                if (status.showCamera) {
+              if (status.showCamera) {
                   return Container(
                     color: Colors.blue,
-                    child: status.cameraController!.buildPreview(),
+                    child: controller.cameraController!.buildPreview(),
                   );
                 } else {
                   return Container();
-                }
-              }),
-          RotatedBox(
-            quarterTurns: 1,
-            child: Scaffold(
-                backgroundColor: Colors.transparent,
-                appBar: AppBar(
-                  backgroundColor: Colors.black,
-                  centerTitle: true,
-                  title: Text(
-                    "Escaneie o código de barras do boleto",
-                    style: TextStyles.buttonBackground,
-                  ),
-                  leading: const BackButton(
-                    color: AppColors.background,
-                  ),
-                ),
-                body: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        color: Colors.black,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        color: Colors.transparent,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        color: Colors.black,
-                      ),
-                    )
-                  ],
-                ),
-                bottomNavigationBar: SetLabelButtons(
-                  labelPrimary: "Inserir código do boleto",
-                  onTapPrimary: () {
-                    controller.status = BarcodeScannerStatus.error("Error");
-                  },
-                  labelSecondary: "Adicionar da galeria",
-                  onTapSecondary: controller.scanWithImagePicker,
-                )),
+	                 class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
+                      child: BottomSheetWidget(
+                          labelPrimary: "Escanear novamente",
+                          onTapPrimary: () {
+                            controller.scanWithCamera();
+                          },
+                          labelSecondary: "Digitar código",
+                          onTapSecondary: () {},
           ),
           ValueListenableBuilder<BarcodeScannerStatus>(
               valueListenable: controller.statusNotifier,
